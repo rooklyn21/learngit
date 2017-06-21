@@ -41,6 +41,8 @@ git是管理修改，不是管理文件，commit是提交add以后的修改。
 $ git checkout -- readme.txt
 $ git reset HEAD readme.txt
 
+
+
 添加一个新文件test.txt到Git并且提交，然后删除
 $ git add test.txt
 $ git commit -m "add test.txt"
@@ -51,3 +53,12 @@ $ git rm test.txt
 $ git commit -m "remove test.txt"
 删错了要还原
 $ git checkout -- test.txt
+
+
+远程版本库，本机生成公钥，复制
+$ ssh-keygen -t rsa -C "youremail@example.com"
+vi ~/.ssh/id_rsa.pub
+ggVGy复制密钥
+
+第2步：登陆GitHub，打开“Settings”，“SSH and GPG Keys”页面：
+然后，点“New SSH Key”，填上任意Title，在Key文本框里粘贴id_rsa.pub文件的内容：
