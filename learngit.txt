@@ -1,0 +1,42 @@
+linux
+sudo apt-get install git
+
+OSX
+从AppStore安装Xcode，Xcode集成了Git，运行Xcode，选择菜单“Xcode”->“Preferences”，
+在弹出窗口中找到“Downloads”，选择“Command Line Tools”，点“Install”就可以完成安装了。
+
+win
+从https://git-for-windows.github.io下载（网速慢的同学请移步国内镜像），然后按默认选项安装即可。
+
+$ git config --global user.name "Your Name"
+$ git config --global user.email "email@example.com"
+
+创建目录，并变成Git可以管理的仓库：
+$ mkdir learngit
+$ git init
+
+$ git add readme.txt
+git commit -m "wrote a readme file"
+
+
+git status告诉你有文件被修改过，用git diff可以查看修改内容。
+$ git status
+$ git diff readme.txt
+
+查看版本号历史，版本回退
+$ git log
+$ git log --pretty=oneline
+
+回到上个版本，回到特定版本（版本号写前几位就行）
+$ git reset --hard HEAD^
+$ git reset --hard 3628164
+
+查命令历史
+$ git reflog
+
+
+git是管理修改，不是管理文件，commit是提交add以后的修改。
+恢复上一次add或者commit
+撤销最新的add
+$ git checkout -- readme.txt
+$ git reset HEAD readme.txt
